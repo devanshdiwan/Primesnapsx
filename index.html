@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>User Links</title>
+
 <style>
   :root{--maxw:420px; --skel-bg: #2a2b2e;}
   *{box-sizing:border-box}
@@ -13,66 +14,114 @@
     background:#0e0f12;
     color:#fff;
     min-height:100vh;
+    padding:0;
     display:flex;
+    flex-direction:column;
     align-items:center;
-    justify-content:center;
-    padding:24px 14px;
   }
-  .wrap{width:100%;max-width:var(--maxw);text-align:center}
+
+  .wrap{
+    width:100%;
+    max-width:var(--maxw);
+    text-align:center;
+    padding:20px 14px;
+    padding-bottom:30px;
+  }
+
   .avatar{width:120px;height:120px;border-radius:50%;overflow:hidden;margin:0 auto 10px;border:2px solid #ffffff22}
-  .avatar img{width:100%;height:100%;object-fit:cover; background: var(--skel-bg);}
-  .name{font-weight:700;font-size:1.5rem; min-height: 29px;} /* min-height to prevent layout shift */
-  .bio{color:#cfd3da;margin-bottom:18px; min-height: 20px;}
+  .avatar img{width:100%;height:100%;object-fit:cover}
+  .name{font-weight:700;font-size:1.5rem;}
+  .bio{color:#cfd3da;margin-bottom:18px;}
+
+  /* Search Bar */
+  .search-container { margin: 25px 0 15px 0; }
+  #search-bar{
+    width:100%;padding:12px;border-radius:12px;font-size:1rem;
+    background:#1a1b1e;color:#fff;border:1px solid #333;
+  }
+
   .links{display:flex;flex-direction:column;gap:12px;margin-top:10px}
   .link{
-    display:flex;align-items:center;gap:10px;text-decoration:none;background:#eee;color:#111;
-    padding:14px;border-radius:14px;font-weight:700;border:1px solid #00000010
-  }
-  .link:active{transform:translateY(1px)}
-  .icon{
-    width:32px;height:32px;border-radius:50%;overflow:hidden;flex-shrink:0;
-    background:#fff;display:grid;place-items:center;border:1px solid #00000014;
-  }
-  .icon img{width:100%;height:100%;object-fit:cover}
-
-  /* --- Skeleton Loader Styles --- */
-  .skeleton {
-    opacity: .7;
-    animation: skeleton-loading 1s linear infinite alternate;
-  }
-  .skeleton-avatar { width: 120px; height: 120px; border-radius: 50%; }
-  .skeleton-text { width: 60%; height: 24px; margin: 5px auto; border-radius: 8px; }
-  .skeleton-bio { width: 80%; height: 20px; margin: 0 auto 18px; border-radius: 8px; }
-  .skeleton-link { width: 100%; height: 62px; border-radius: 14px; }
-  @keyframes skeleton-loading {
-    0% { background-color: var(--skel-bg); }
-    100% { background-color: #3f4044; }
+    display:flex;align-items:center;gap:10px;text-decoration:none;
+    background:#eee;color:#111;padding:14px;border-radius:14px;
+    font-weight:700;border:1px solid #00000010;
   }
 
+  .icon{width:32px;height:32px;border-radius:50%;overflow:hidden;background:#fff;display:grid;place-items:center;}
+  .icon img{width:100%;height:100%;object-fit:cover;}
+
+  /* Ad Wrapper */
+  .ad-box{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    margin:10px 0;
+  }
+  .ad-320{
+    width:320px;
+    height:50px;
+  }
 </style>
 </head>
+
 <body>
+
+<!-- █████ TOP AD █████ -->
+<div class="ad-box">
+  <div class="ad-320">
+    <script type="text/javascript">
+      atOptions = {
+        'key' : 'c036741c3a6e7e949a4fd0edb45c42d7',
+        'format' : 'iframe',
+        'height' : 50,
+        'width' : 320,
+        'params' : {}
+      };
+    </script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/c036741c3a6e7e949a4fd0edb45c42d7/invoke.js"></script>
+  </div>
+</div>
+
+
 <main class="wrap">
-  <!-- Structure with Skeleton Loader -->
-  <div id="avatar-container" class="avatar">
-    <div id="avatar-skeleton" class="skeleton skeleton-avatar"></div>
-    <img id="avatar" alt="" style="display:none;">
+
+  <div class="avatar">
+    <img id="avatar" />
   </div>
-  <div id="name-container" class="name">
-    <div id="name-skeleton" class="skeleton skeleton-text"></div>
-    <span id="name" style="display:none;"></span>
+
+  <div class="name">
+    <span id="name"></span>
   </div>
-  <div id="bio-container" class="bio">
-    <div id="bio-skeleton" class="skeleton skeleton-bio"></div>
-    <span id="bio" style="display:none;"></span>
+
+  <div class="bio">
+    <span id="bio"></span>
   </div>
-  <div id="links" class="links" aria-label="Links">
-    <!-- Skeleton links -->
-    <div class="skeleton skeleton-link"></div>
-    <div class="skeleton skeleton-link"></div>
-    <div class="skeleton skeleton-link"></div>
+
+  <div class="search-container">
+    <input type="search" id="search-bar" placeholder="Search Files">
   </div>
+
+  <div id="links" class="links"></div>
+
 </main>
+
+
+<!-- █████ BOTTOM AD █████ -->
+<div class="ad-box">
+  <div class="ad-320">
+    <script type="text/javascript">
+      atOptions = {
+        'key' : 'c036741c3a6e7e949a4fd0edb45c42d7',
+        'format' : 'iframe',
+        'height' : 50,
+        'width' : 320,
+        'params' : {}
+      };
+    </script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/c036741c3a6e7e949a4fd0edb45c42d7/invoke.js"></script>
+  </div>
+</div>
+
 
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
@@ -89,99 +138,74 @@
     measurementId: "G-CDK62W0PW1"
   };
 
-  // --- Helper Functions ---
-  const isAbsolute = (u) => /^(https?:|mailto:|tel:)/i.test(u);
-  const normalize = (u) => {
-    if(!u) return "#";
-    u = u.trim();
-    return isAbsolute(u) ? u : "https://" + u.replace(/^\/+/, "");
-  };
+  const normalize = (u)=>!u?"#":(/^(https?:|mailto:|tel:)/i.test(u)?u:"https://"+u);
 
-  // --- Rendering Function ---
-  function renderPage(data) {
-    const profile = data.profile || {};
-    const links = Array.isArray(data.links) ? data.links : [];
-
-    // Hide skeletons and show content
-    document.getElementById("avatar-skeleton").style.display = 'none';
-    const avatarImg = document.getElementById("avatar");
-    avatarImg.src = profile.avatar || "";
-    avatarImg.style.display = 'block';
-
-    document.getElementById("name-skeleton").style.display = 'none';
-    const nameEl = document.getElementById("name");
-    nameEl.textContent = profile.name || "No name";
-    nameEl.style.display = 'block';
-
-    document.getElementById("bio-skeleton").style.display = 'none';
-    const bioEl = document.getElementById("bio");
-    bioEl.textContent = profile.bio || "";
-    bioEl.style.display = 'block';
-
-    const list = document.getElementById("links");
-    list.innerHTML = ""; // Clear skeleton links
-
-    links.forEach(item => {
-      const a = document.createElement("a");
-      a.className = "link";
-      a.href = normalize(item.url);
-      a.target = "_blank";
-      a.rel = "noopener noreferrer";
-
-      const ic = document.createElement("div");
-      ic.className = "icon";
-      if (item.icon && item.icon.startsWith("data:image")) {
-        const img = document.createElement("img");
-        img.src = item.icon;
-        img.alt = "";
-        ic.appendChild(img);
-      } else {
-        ic.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24"><path fill="#888" d="M10.59,13.41C11,13.8 11,14.44 10.59,14.83C10.2,15.22 9.56,15.22 9.17,14.83C7.22,12.88 7.22,9.71 9.17,7.76V7.76L12,10.59L14.83,7.76C16.78,9.71 16.78,12.88 14.83,14.83C14.44,15.22 13.8,15.22 13.41,14.83C13,14.44 13,13.8 13.41,13.41L14.12,12.7L12,10.59L9.88,12.7L10.59,13.41M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"></path></svg>';
+  function setupSearch(){
+    const searchBar=document.getElementById('search-bar');
+    const links=document.getElementById('links');
+    searchBar.addEventListener('input',(e)=>{
+      const term=e.target.value.toLowerCase();
+      const all=links.getElementsByTagName('a');
+      for(let a of all){
+        a.style.display=a.textContent.toLowerCase().includes(term)?'flex':'none';
       }
-
-      const title = document.createElement("span");
-      title.textContent = item.title || "Untitled";
-
-      a.appendChild(ic);
-      a.appendChild(title);
-      list.appendChild(a);
     });
   }
 
-  // --- Main Function ---
-  async function main() {
-    // 1. Try to load data from cache first for instant load
-    const cachedData = localStorage.getItem('userData');
-    if (cachedData) {
-      try {
-        renderPage(JSON.parse(cachedData));
-      } catch (e) {
-        console.error("Failed to parse cached data:", e);
-      }
-    }
+  function renderPage(data){
+    document.getElementById("avatar").src = data.profile?.avatar || "";
+    document.getElementById("name").textContent = data.profile?.name || "No Name";
+    document.getElementById("bio").textContent = data.profile?.bio || "";
 
-    // 2. Fetch fresh data from Firebase in the background
-    try {
-      const app = initializeApp(firebaseConfig);
-      const db = getDatabase(app);
-      const snap = await get(child(ref(db), "/"));
-      const freshData = snap.exists() ? snap.val() : {};
+    const links = document.getElementById("links");
+    links.innerHTML = "";
 
-      // 3. Update page and cache if data is new
-      if (JSON.stringify(freshData) !== cachedData) {
-        renderPage(freshData);
-        localStorage.setItem('userData', JSON.stringify(freshData));
+    (data.links || []).forEach(item=>{
+      const a=document.createElement("a");
+      a.className="link";
+      a.href=normalize(item.url);
+      a.target="_blank";
+
+      const ic=document.createElement("div");
+      ic.className="icon";
+
+      if(item.icon?.startsWith("data:image")){
+        ic.innerHTML=`<img src="${item.icon}">`;
+      } else {
+        ic.innerHTML=`<svg width="18" height="18" viewBox="0 0 24 24">
+          <path fill="#888" d="M10.59,13.41C11,13.8 11,14.44 10.59,14.83C10.2,15.22 9.56,15.22 9.17,14.83C7.22,12.88 7.22,9.71 9.17,7.76V7.76L12,10.59L14.83,7.76C16.78,9.71 16.78,12.88 14.83,14.83C14.44,15.22 13.8,15.22 13.41,14.83C13,14.44 13,13.8 13.41,13.41L14.12,12.7L12,10.59L9.88,12.7L10.59,13.41M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"/>
+        </svg>`;
       }
-    } catch (err) {
-      console.error(err);
-      if (!cachedData) { // Only show error if there's no cache to display
-        document.getElementById("name").textContent = "Error loading data";
-        document.getElementById("links").innerHTML = ""; // Clear skeletons on error
+
+      const title=document.createElement("span");
+      title.textContent=item.title || "Untitled";
+
+      a.appendChild(ic);
+      a.appendChild(title);
+      links.appendChild(a);
+    });
+
+    setupSearch();
+  }
+
+  async function main(){
+    const cached=localStorage.getItem("userData");
+    if(cached){ renderPage(JSON.parse(cached)); }
+
+    try{
+      const app=initializeApp(firebaseConfig);
+      const db=getDatabase(app);
+      const snap=await get(child(ref(db), "/"));
+      const fresh=snap.exists()?snap.val():{};
+      if(JSON.stringify(fresh)!==cached){
+        localStorage.setItem("userData",JSON.stringify(fresh));
+        renderPage(fresh);
       }
-    }
+    }catch(e){ console.error(e); }
   }
 
   main();
 </script>
+
 </body>
 </html>
